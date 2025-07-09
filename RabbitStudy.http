@@ -1,0 +1,6 @@
+@RabbitStudy_HostAddress = http://localhost:5177
+
+GET {{RabbitStudy_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
