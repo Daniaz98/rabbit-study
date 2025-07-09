@@ -1,4 +1,5 @@
 using MassTransit;
+using RabbitStudy.Bus;
 using RabbitStudy.Relatorios;
 
 namespace RabbitStudy.Controllers;
@@ -7,7 +8,7 @@ internal static class Endpoints
 {
     public static void AddEndpoints(this WebApplication app)
     {
-        app.MapPost("solicitar-relatorio/{name}", async (string name, IBus bus) =>
+        app.MapPost("solicitar-relatorio/{name}", async (string name, IPublishBus bus, CancellationToken ct) =>
         {
             var solicitacao = new SolicitacaoRelatorio()
             {
@@ -18,8 +19,10 @@ internal static class Endpoints
             };
 
             List.Relatorios.Add(solicitacao);
+            
+            var eventRequest = new RelatorioSolicitadoEvent(solicitacao.Id, solicitacao.Nome);
 
-            await bus.Publish(solicitacao);
+            await bus.PublishAsync(eventRequest, ct);
 
             return Results.Ok(solicitacao);
         });

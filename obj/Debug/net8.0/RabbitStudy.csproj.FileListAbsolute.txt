@@ -35,3 +35,4 @@ C:\Users\Daniel\Dev\RabbitStudy\RabbitStudy\bin\Debug\net8.0\MassTransit.dll
 C:\Users\Daniel\Dev\RabbitStudy\RabbitStudy\bin\Debug\net8.0\MassTransit.Abstractions.dll
 C:\Users\Daniel\Dev\RabbitStudy\RabbitStudy\bin\Debug\net8.0\MassTransit.RabbitMqTransport.dll
 C:\Users\Daniel\Dev\RabbitStudy\RabbitStudy\bin\Debug\net8.0\RabbitMQ.Client.dll
+C:\Users\Daniel\Dev\RabbitStudy\RabbitStudy\obj\Debug\net8.0\RabbitStudy.sourcelink.json
